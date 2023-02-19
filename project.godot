@@ -1,0 +1,63 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+[application]
+
+config/name="Doria"
+run/main_scene="res://Scenes/Program/ProgramLoading.tscn"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0.145098, 0.145098, 0.145098, 1 )
+config/icon="res://icon.png"
+name=""
+config/name_zh_CN="多妮亚"
+config/name_en="Doria"
+config/name_ru="Дориа"
+
+[autoload]
+
+AudioManager="*res://Scripts/Audio/AudioManager.cs"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/size/test_width=1280
+window/size/test_height=720
+window/dpi/allow_hidpi=true
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[locale]
+
+test="zh_CN"
+fallback="zh_CN"
+translations=PoolStringArray( "res://Public/Localization/strings.zh_CN.translation", "res://Public/Localization/strings.en_US.translation" )
+
+[mono]
+
+project/assembly_name="Doria.Godot"
+
+[node]
+
+name_num_separator=2
+
+[physics]
+
+common/physics_fps=30
+common/enable_pause_aware_picking=true
+2d/thread_model=2
+
+[rendering]
+
+threads/thread_model=2
+environment/default_environment="res://default_env.tres"

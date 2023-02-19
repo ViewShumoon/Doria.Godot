@@ -7,4 +7,16 @@ export_presets.cfg
 # Mono-specific ignores
 .mono/
 data_*/
-/.vs/Doria.Godot
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio cache/options directory
+.vs/

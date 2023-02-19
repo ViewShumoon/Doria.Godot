@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Program/ProgramMainMenu.cs" type="Script" id=2]
+
+[node name="ProgramMainMenu" type="CanvasLayer" groups=["ProgramMainMenu"]]
+layer = 0
+script = ExtResource( 2 )
+
+[node name="Background" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CenterLogo" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 64.0
+
+[node name="Logo" type="TextureRect" parent="MarginContainer/VBoxContainer/CenterLogo"]
+margin_left = 480.0
+margin_right = 544.0
+margin_bottom = 64.0
+texture = ExtResource( 1 )
+
+[node name="ButtonContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 68.0
+margin_right = 1024.0
+margin_bottom = 208.0
+
+[node name="MAIN_NEW_GAME" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" groups=["ProgramMainMenu"]]
+margin_right = 1024.0
+margin_bottom = 20.0
+text = "New Game"
+
+[node name="MAIN_MULTIPLAYER" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" groups=["ProgramMainMenu"]]
+margin_top = 24.0
+margin_right = 1024.0
+margin_bottom = 44.0
+disabled = true
+text = "Multiplayer"
+
+[node name="MAIN_MODS" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" groups=["ProgramMainMenu"]]
+margin_top = 48.0
+margin_right = 1024.0
+margin_bottom = 68.0
+disabled = true
+text = "Mods"
+
+[node name="MAIN_OPTIONS" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" groups=["ProgramMainMenu"]]
+margin_top = 72.0
+margin_right = 1024.0
+margin_bottom = 92.0
+text = "Options"
+
+[node name="MAIN_ABOUT" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer"]
+margin_top = 96.0
+margin_right = 1024.0
+margin_bottom = 116.0
+text = "About"
+
+[node name="MAIN_EXIT" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" groups=["ProgramMainMenu"]]
+margin_top = 120.0
+margin_right = 1024.0
+margin_bottom = 140.0
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/MAIN_NEW_GAME" to="." method="OnNewGameButtonPressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/MAIN_MULTIPLAYER" to="." method="OnMultiplayerButtonPressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/MAIN_MODS" to="." method="OnModsButtonPressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/MAIN_OPTIONS" to="." method="OnOptionsButtonPressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/MAIN_EXIT" to="." method="OnExitButtonPressed"]
